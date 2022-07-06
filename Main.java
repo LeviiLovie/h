@@ -11,7 +11,7 @@ import javax.swing.filechooser.FileSystemView;
 public class Main {
     public static void main(String[] args) {
 		try {
-			ImageIO.write(grabScreen(), "png", new File(getHomeDir(), "screen.png"));
+			ImageIO.write(grabScreen(), "png", new File("screen.png"));
 		} catch (IOException e) {
 			System.out.println("IO exception"+e);
 		}
