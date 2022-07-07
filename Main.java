@@ -6,20 +6,13 @@ import java.io.IOException;
 import java.awt.AWTException;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import javax.swing.filechooser.FileSystemView;
 
 public class Main {
     public static void main(String[] args) {
-		try {
-			ImageIO.write(grabScreen(), "png", new File("screen.png"));
-		} catch (IOException e) {
-			System.out.println("IO exception"+e);
-		}
-	}
-
-	private static File getHomeDir() {
-		FileSystemView fsv = FileSystemView.getFileSystemView();
-		return fsv.getHomeDirectory();
+		try {ImageIO.write(grabScreen(), "png", new File("screen.png"));} catch (IOException e) {System.out.println("IO exception"+e);}
+		
+		Robot myRobot = new Robot();
+		myRobot.mouseMove(10,660);
 	}
 
 	private static BufferedImage grabScreen() { 
