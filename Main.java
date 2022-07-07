@@ -1,5 +1,6 @@
-import java.io.File;
 import java.awt.Robot;
+
+import java.io.File;
 import java.awt.Toolkit;
 import java.awt.Rectangle;
 import java.io.IOException;
@@ -11,8 +12,12 @@ public class Main {
     public static void main(String[] args) {
 		try {ImageIO.write(grabScreen(), "png", new File("screen.png"));} catch (IOException e) {System.out.println("IO exception"+e);}
 		
-		Robot myRobot = new Robot();
-		myRobot.mouseMove(10,660);
+		try {
+			Robot bot = new Robot();
+			bot.mouseMove(50, 50);  
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static BufferedImage grabScreen() { 
