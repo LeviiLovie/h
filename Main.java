@@ -13,12 +13,10 @@ public class Main {
     public static void main(String[] args) {
 		try {ImageIO.write(grabScreen(), "png", new File("screen.png"));} catch (IOException e) {System.out.println("IO exception"+e);}
 		
-		// move(50, 30);
-		// press(300, 150);
-		// press(300, 150);
-		// press(50, 30);
-		// move(1400, 175);
-		press(1400, 175);
+		// press(1400, 175);
+		// press(425, 725);
+		press(500, 450);
+		press(700, 450);
 	}
 
 	private static void press(int x, int y) {
